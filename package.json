@@ -1,6 +1,6 @@
 {
   "name": "mysql-mcp-universal",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "🚀 Universal MySQL MCP Server - Connect GitHub Copilot to any MySQL database instantly",
   "main": "main-universal.cjs",
   "bin": {
@@ -14,7 +14,7 @@
   "keywords": [
     "mcp",
     "mysql",
-    "vscode", 
+    "vscode",
     "copilot",
     "database",
     "github-copilot",
