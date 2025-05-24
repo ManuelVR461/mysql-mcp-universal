@@ -1,0 +1,57 @@
+# Configuraciones ignoradas localmente
+.env
+
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos temporales
+*.tmp
+*.temp
+.temp/
+temp/
+
+# Logs
+logs/
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE y editores
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Respaldos
+*.backup
+*.bak
+*.old
+
+# Archivos de testing local
+test-local/
+testing/
+debug/
+
+# Caché
+.cache/
+.parcel-cache/
+
+# Archivos de desarrollo personal
+personal-notes.md
+todo.md
+dev-config.json
+
+# Configuraciones específicas del usuario
+config/local.json
+config/personal/

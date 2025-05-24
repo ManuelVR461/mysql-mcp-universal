@@ -1,0 +1,79 @@
+# 🚀 MySQL MCP Universal Docker Setup
+
+version: '3.8'
+
+services:
+  # 🗄️ MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-mcp-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: mcp123
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: mcpuser
+      MYSQL_PASSWORD: mcppass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - mcp-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5
+      interval: 30s
+
+  # 🔧 MySQL MCP Universal Server
+  mcp-server:
+    build: .
+    container_name: mysql-mcp-server
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: mcp123
+    networks:
+      - mcp-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "console.log('Health check')"]
+      timeout: 5s
+      retries: 3
+      interval: 30s
+
+  # 📊 phpMyAdmin (Optional - for database management)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: mysql-mcp-admin
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: mcp123
+    ports:
+      - "8080:80"
+    networks:
+      - mcp-network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  mcp-network:
+    driver: bridge
+
+# 📝 Usage Instructions:
+# 1. Run: docker-compose up -d
+# 2. Access phpMyAdmin: http://localhost:8080
+# 3. Configure VS Code to use: mysql-mcp-server:3306
+# 4. Default credentials: root/mcp123
