@@ -113,3 +113,4 @@ node main-universal.cjs
 
 ---
 **© 2024-2025 MySQL MCP Universal Server v2.0.1**
+"# mysql-mcp-universal" 
