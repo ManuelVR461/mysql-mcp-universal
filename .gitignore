@@ -1,57 +1,68 @@
-# Configuraciones ignoradas localmente
-.env
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Dependencias
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
 
-# Archivos temporales
-*.tmp
-*.temp
-.temp/
-temp/
-
-# Logs
-logs/
-*.log
-
-# Archivos de sistema
-.DS_Store
-Thumbs.db
+# IDE
+.vscode/
+.idea/
 *.swp
 *.swo
+*~
+.DS_Store
 
-# IDE y editores
-.vscode/settings.json
-.vscode/launch.json
-.vscode/tasks.json
-.idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
 
-# Respaldos
-*.backup
-*.bak
-*.old
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
-# Archivos de testing local
-test-local/
-testing/
-debug/
+# Logs
+*.log
+logs/
 
-# Caché
-.cache/
-.parcel-cache/
+# Database
+*.db
+*.sqlite
+*.sqlite3
 
-# Archivos de desarrollo personal
-personal-notes.md
-todo.md
-dev-config.json
+# Configuración sensible (descomentar si tienes passwords reales)
+# config/settings.json
 
-# Configuraciones específicas del usuario
-config/local.json
-config/personal/
+# Build y distribución
+*.egg-info/
+dist/
+build/

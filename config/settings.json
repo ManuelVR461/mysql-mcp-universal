@@ -1,0 +1,33 @@
+{
+  "connections": {
+    "mysql_local": {
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "user": "root",
+      "password": "",
+      "database": null,
+      "active": true,
+      "description": "Conexión MySQL local de desarrollo"
+    },
+    "postgres_local": {
+      "type": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "user": "postgres",
+      "password": "",
+      "database": "testdb",
+      "active": false,
+      "description": "Conexión PostgreSQL local de desarrollo"
+    }
+  },
+  "default_connection": "mysql_local",
+  "settings": {
+    "pool_size": 5,
+    "pool_timeout": 30,
+    "query_timeout": 60,
+    "enable_logging": true,
+    "log_queries": false,
+    "confirm_destructive_operations": true
+  }
+}

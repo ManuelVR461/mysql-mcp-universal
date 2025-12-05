@@ -1,0 +1,13 @@
+{
+  "github.copilot.chat.mcp.servers": {
+    "database-connect": {
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "c:\\laragon\\www\\database-connect\\run_server.bat"
+      ],
+      "env": {},
+      "disabled": false
+    }
+  }
+}
