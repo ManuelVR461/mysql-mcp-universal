@@ -1,0 +1,60 @@
+// ========================================
+// COPIAR ESTE FRAGMENTO
+// ========================================
+// Agregar dentro de "github.copilot.chat.mcpServers": {
+// Justo después de la línea que tiene "fastmcp-mysql": { ... },
+// (después del } que cierra fastmcp-mysql, agregar una coma y esto)
+
+,
+"database-connect": {
+  "command": "C:\\laragon\\www\\database-connect\\venv\\Scripts\\python.exe",
+  "args": [
+    "-m",
+    "src.server"
+  ],
+  "cwd": "C:\\laragon\\www\\database-connect",
+  "env": {}
+}
+
+// ========================================
+// UBICACIÓN EXACTA EN TU ARCHIVO
+// ========================================
+// Busca la línea 239 que dice:
+// "github.copilot.chat.mcpServers": {
+//
+// Y dentro de ese bloque, después de "fastmcp-mysql",
+// agrega el código de arriba
+//
+// Ejemplo de cómo debe quedar:
+//
+// "github.copilot.chat.mcpServers": {
+//   "fastmcp-mysql": {
+//     "command": "C:\\laragon\\www\\mysql-connect\\venv\\Scripts\\python.exe",
+//     "args": [
+//       "C:\\laragon\\www\\mysql-connect\\fastmcp_mysql.py"
+//     ],
+//     "env": {
+//       "MYSQL_HOST": "127.0.0.1",
+//       "MYSQL_USER": "root",
+//       "MYSQL_PASSWORD": "",
+//       "MYSQL_PORT": "3306"
+//     }
+//   },
+//   "database-connect": {
+//     "command": "C:\\laragon\\www\\database-connect\\venv\\Scripts\\python.exe",
+//     "args": [
+//       "-m",
+//       "src.server"
+//     ],
+//     "cwd": "C:\\laragon\\www\\database-connect",
+//     "env": {}
+//   }
+// }
+
+// ========================================
+// IMPORTANTE
+// ========================================
+// 1. Agregar una COMA después del } de fastmcp-mysql
+// 2. Pegar el bloque de database-connect
+// 3. Guardar (Ctrl+S)
+// 4. Recargar VS Code: Ctrl+Shift+P > "Developer: Reload Window"
